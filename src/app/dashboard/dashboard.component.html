@@ -3,7 +3,7 @@
         <h3>{{"TOP_HEROES" | translate}}</h3>
       </div>
     </div>
-    <div class="row">
+    <div class="row pt-3">
       <div class="col-sm" *ngFor="let hero of heroes">
         <div class="card" routerLink="/detail/{{hero.id}}">
           <div class="card-body">
