@@ -7,25 +7,25 @@
     <li class="nav-item">
       <a class="nav-link" routerLink="/heroes">{{'HEROES' | translate}}</a>
     </li>
+    <li class="btn-group float-right" dropdown>
+      <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+        {{currentLang}} <span class="caret"></span>
+      </button>
+      <ul *dropdownMenu class="dropdown-menu" role="menu">
+        <li role="menuitem" (click)="setLang('en')"><span class="dropdown-item">English</span></li>
+        <li class="divider dropdown-divider"></li>
+        <li role="menuitem" (click)="setLang('pt-BR')"><span class="dropdown-item">Português</span></li>
+      </ul>
+    </li>
   </ul>  
-  <div class="btn-group ml-auto" dropdown>
-    <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-      {{currentLang}} <span class="caret"></span>
-    </button>
-    <ul *dropdownMenu class="dropdown-menu" role="menu">
-      <li role="menuitem" (click)="setLang('en')"><span class="dropdown-item">English</span></li>
-      <li class="divider dropdown-divider"></li>
-      <li role="menuitem" (click)="setLang('pt-BR')"><span class="dropdown-item">Português</span></li>
-    </ul>
-  </div>
 </nav>
 
 <div class="container">
   <router-outlet></router-outlet>
 </div>
 
-<footer class="footer">
+<footer class="footer" >
     <div class="container">
       <app-messages></app-messages>
     </div>
-  </footer>
+</footer>
