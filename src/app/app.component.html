@@ -1,7 +1,16 @@
-<h1>{{title}}</h1>
+<div>
+    <button (click)="setLang('en')">
+      English
+  </button>
+  
+  <button (click)="setLang('pt-BR')">
+    Português
+  </button>
+</div>
+<h1>{{"TOUR_OF_HEROES" | translate}}</h1>
 <nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/heroes">Heroes</a>
+  <a routerLink="/dashboard">{{'DASHBOARD' | translate}}</a>
+  <a routerLink="/heroes">{{'HEROES' | translate}}</a>
 </nav>
 <router-outlet></router-outlet>
 <app-messages></app-messages>
