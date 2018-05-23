@@ -1,3 +1,9 @@
+$module-background: #607D8B;
+$module-color: #eee;
+$module-hover-color: #607d8b;
+$module-hover-background: #EEE;
+
+
 /* DashboardComponent's private CSS styles */
 [class*='col-'] {
   float: left;
@@ -16,7 +22,8 @@ a {
   box-sizing: border-box;
 }
 h3 {
-  text-align: center; margin-bottom: 0;
+  text-align: center; 
+  margin-bottom: 0;
 }
 h4 {
   position: relative;
@@ -30,16 +37,16 @@ h4 {
 .module {
   padding: 20px;
   text-align: center;
-  color: #eee;
+  color: $module-color;
   max-height: 120px;
   min-width: 120px;
-  background-color: #607D8B;
+  background-color: $module-background;
   border-radius: 2px;
 }
 .module:hover {
-  background-color: #EEE;
+  background-color: $module-hover-background;
   cursor: pointer;
-  color: #607d8b;
+  color: $module-hover-color;
 }
 .grid-pad {
   padding: 10px 0;
