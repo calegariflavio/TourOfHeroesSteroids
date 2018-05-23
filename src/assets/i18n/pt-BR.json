@@ -10,5 +10,7 @@
     "HERO_NAME": "Nome do Herói",
     "ADD": "Adicionar",
     "SAVE": "Salvar",
-    "GO_BACK": "Voltar"
+    "GO_BACK": "Voltar",
+    "en": "Inglês",
+    "pt-BR": "Português"
 }

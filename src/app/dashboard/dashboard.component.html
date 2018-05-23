@@ -1,12 +1,18 @@
-<h3>{{TOP_HEROES}}</h3>
-
-<div class="grid grid-pad">
-  <a *ngFor="let hero of heroes" class="col-1-4"
-      routerLink="/detail/{{hero.id}}">
-    <div class="module hero">
-      <h4>{{hero.name}}</h4>
+    <div class="row pt-3">
+      <div class="col">
+        <h3>{{"TOP_HEROES" | translate}}</h3>
+      </div>
     </div>
-  </a>
-</div>
+    <div class="row">
+      <div class="col-sm" *ngFor="let hero of heroes">
+        <div class="card" routerLink="/detail/{{hero.id}}">
+          <div class="card-body">
+            <h4 class="card-title">{{hero.name}}</h4>
+            <a href="#" class="card-link" routerLink="/detail/{{hero.id}}">{{"EDIT_HERO" | translate}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 <app-hero-search></app-hero-search>

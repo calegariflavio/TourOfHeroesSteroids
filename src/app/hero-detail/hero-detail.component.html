@@ -1,10 +1,14 @@
+
 <div *ngIf="hero">
-  <h2>{{ hero.name | uppercase }} Details</h2>
+  <div class="row pt-3">
+    <div class="col">
+      <h3>{{ hero.name | uppercase }} Details</h3>
+    </div>
+  </div>
   <div><span>id: </span>{{hero.id}}</div>
-  <div>
-    <label>{{'NAME' | translate}}:
-      <input [(ngModel)]="hero.name" placeholder="name"/>
-    </label>
+  <div class="form-group">
+      <label for="heroName">{{'NAME' | translate}}:</label>
+      <input type="text" class="form-control" id="heroName" [(ngModel)]="hero.name">
   </div>
   <button (click)="goBack()">{{'GO_BACK' | translate}}</button>
   <button (click)="save()">{{'SAVE' | translate}}</button>

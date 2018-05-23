@@ -1,21 +1,33 @@
-<h2>{{'MY_HEROES' | translate}}</h2>
-
-<div>
-  <label>{{'HERO_NAME' | translate}}:
-    <input #heroName />
-  </label>
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(heroName.value); heroName.value=''">
-    {{'ADD' | translate}}
-  </button>
+<div class="row pt-3">
+  <h3>{{'MY_HEROES' | translate}}</h3>
 </div>
 
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </a>
-    <button class="delete" title="delete hero"
-    (click)="delete(hero)">x</button>
-  </li>
-</ul>
+<div class="row">
+  <div class="col-xs-4">
+    <label>{{'HERO_NAME' | translate}}:</label>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" #heroName>
+        <div class="input-group-append">
+          <button (click)="add(heroName.value); heroName.value=''" class="btn btn-outline-secondary" type="button">
+            {{'ADD' | translate}}
+          </button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-4">
+    <ul class="list-group">
+        <li *ngFor="let hero of heroes" class="list-group-item">
+            <a routerLink="/detail/{{hero.id}}">
+              <span class="badge">{{hero.id}}</span> {{hero.name}}
+            </a>
+            <span (click)="delete(hero)" class="badge badge-primary badge-pill ml-auto">X</span>
+        </li>
+    </ul>
+  </div>
+</div>
+
+
+

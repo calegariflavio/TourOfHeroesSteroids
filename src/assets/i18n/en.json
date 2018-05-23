@@ -11,5 +11,8 @@
     "NAME": "Name",
     "ADD": "Add",
     "SAVE": "Save",
-    "GO_BACK": "Go Back"
+    "GO_BACK": "Go Back",
+    "en": "English",
+    "pt-BR": "Portuguese",
+    "EDIT_HERO": "Edit Hero"
 }

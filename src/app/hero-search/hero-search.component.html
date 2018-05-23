@@ -1,13 +1,17 @@
-<div id="search-component">
+<div class="mt-5" id="search-component">
   <h4>{{ 'HERO_SEARCH' | translate }}</h4>
 
-  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  
+  <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">@</span>
+      </div>
+      <input type="text" class="form-control" #searchBox id="search-box" (keyup)="search(searchBox.value)" >
+  </div>
 
-  <ul class="search-result">
-    <li *ngFor="let hero of heroes$ | async" >
-      <a routerLink="/detail/{{hero.id}}">
-        {{hero.name}}
+  <div class="media" *ngFor="let hero of heroes$ | async" >
+      <a class="media-body" routerLink="/detail/{{hero.id}}">
+        <h5 class="mt-0">{{hero.name}}</h5>
       </a>
-    </li>
-  </ul>
+    </div>
 </div>

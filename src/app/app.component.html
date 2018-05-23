@@ -1,16 +1,31 @@
-<div>
-    <button (click)="setLang('en')">
-      English
-  </button>
-  
-  <button (click)="setLang('pt-BR')">
-    Português
-  </button>
-</div>
-<h1>{{"TOUR_OF_HEROES" | translate}}</h1>
-<nav>
-  <a routerLink="/dashboard">{{'DASHBOARD' | translate}}</a>
-  <a routerLink="/heroes">{{'HEROES' | translate}}</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <h1 class="navbar-brand">{{"TOUR_OF_HEROES" | translate}}</h1>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a href="#" class="nav-link active" routerLink="/dashboard">{{'DASHBOARD' | translate}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/heroes">{{'HEROES' | translate}}</a>
+    </li>
+  </ul>  
+  <div class="btn-group ml-auto" dropdown>
+    <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+      {{currentLang}} <span class="caret"></span>
+    </button>
+    <ul *dropdownMenu class="dropdown-menu" role="menu">
+      <li role="menuitem" (click)="setLang('en')"><span class="dropdown-item">English</span></li>
+      <li class="divider dropdown-divider"></li>
+      <li role="menuitem" (click)="setLang('pt-BR')"><span class="dropdown-item">Português</span></li>
+    </ul>
+  </div>
 </nav>
-<router-outlet></router-outlet>
-<app-messages></app-messages>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="footer">
+    <div class="container">
+      <app-messages></app-messages>
+    </div>
+  </footer>
